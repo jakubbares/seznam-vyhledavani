@@ -1,20 +1,16 @@
 import pandas as pd
 from ufal.morphodita import *
-# import gensim
-
+import csv
 
 data = pd.read_csv('articles.csv',  sep='|')
 data.columns = ['url', 'headline', 'paragraphs']
-paragraphs = data[['paragraphs']]
-
-
-
+# paragraphs = data[['paragraphs']]
 
 def lemmatize():
     tagger = Tagger.load('morphodita/czech-morfflex-pdt-161115.tagger')
     forms = Forms()
 
-    for index, paragraph in paragraphs.iterrows():
+    for index, paragraph in data.iterrows():
         paragraph = ''.join(paragraph)
         print(paragraph)
         lemmas = TaggedLemmas()
