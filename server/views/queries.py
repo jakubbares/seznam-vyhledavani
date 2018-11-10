@@ -39,12 +39,12 @@ class Query(Resource):
         query = raw_dict['query']
         history = raw_dict['history']
 
-        query_data = data.loc[data['query'] == query]
-        query_tfidf_matrix = tfidf.fit_transform(query_data['lemmas'])
-        additional_rows = pd.DataFrame(0, index=np.arange(data.shape[0]-query_data.shape[0]), columns=[i for i in range(tfidf_matrix.todense().shape[1])])
+        # query_data = data.loc[data['query'] == query]
+        # query_tfidf_matrix = tfidf.fit_transform(query_data['lemmas'])
+        # additional_rows = pd.DataFrame(0, index=np.arange(data.shape[0]-query_data.shape[0]), columns=[i for i in range(tfidf_matrix.todense().shape[1])])
 
-        query_tfidf_matrix = pd.concat([pd.DataFrame(query_tfidf_matrix.todense()), additional_rows]).fillna(0)
-        cosine_sim = linear_kernel(tfidf_matrix, query_tfidf_matrix)
+        # query_tfidf_matrix = pd.concat([pd.DataFrame(query_tfidf_matrix.todense()), additional_rows]).fillna(0)
+        cosine_sim = linear_kernel(tfidf_matrix, tfidf_matrix)
 
         history_indexes = data.index[data['id'].isin(history)]
 
