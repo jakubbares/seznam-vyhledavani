@@ -17,9 +17,9 @@ export class QueryService {
   historiesMap: any = {};
   constructor(private http: HttpClient) {
     this.historiesMap = {
-      "Politics": ["8b66a26adef1a628", "939b47f04e3f1246", "6e631de2f3f47090", "939b47f04e3f1246", "698aa051e5028eaf", "cf6c62fa32db4645"],
-      "Sport": [],
-      "Joe": []
+      "Politics": ["1e5c3ad9ed4e42a5", "1ef412c95d3287d2", "d04f61aeca8e9c26", "8b66a26adef1a628", "939b47f04e3f1246", "6e631de2f3f47090", "939b47f04e3f1246", "698aa051e5028eaf"],
+      "Sport": ["9dcec99f7d983863","1fdb667d96220614", "83c14a35a6233231","98c788942aaeda4c","dcc66fc20da7a28f","4a6f25e2057b2ad2","b7fb7a18dffd2771", "3298ec005949981a"],
+      "Business": ["62947440edea30e6", "f3d260b5e6987df6", "355d032c4c83c482", "424624dff2a0cb49", "a5d5d8b41068db51", "7eb73cecb6a613d9", "9a5dcdb0f6cc21b7", "c77d96a48863c7bc"]
     };
   }
 
