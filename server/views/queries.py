@@ -16,7 +16,7 @@ data =  data[data['paragraphs'] != '\xa0']
 lemma_column = data.shape[0]*[[]]
 data['lemmas'] = lemma_column
 tfidf = TfidfVectorizer(ngram_range=(1,1))
-tagger = Tagger.load('./../morphodita/czech-morfflex-pdt-161115.tagger')
+tagger = Tagger.load('..//morphodita/czech-morfflex-pdt-161115.tagger')
 forms = Forms()
 
 for index, row in data.iterrows():

@@ -8,11 +8,12 @@ import {QueryService} from "../../services/query.service";
 })
 export class HistoryPage {
   userArticles = {};
+  users: string[];
   constructor(
     private queryService: QueryService
   ) {
-    const users = Object.keys(this.queryService.historiesMap);
-    users.forEach(userName => {
+    this.users = Object.keys(this.queryService.historiesMap);
+    this.users.forEach(userName => {
       this.queryService.getArticles(this.queryService.historiesMap[userName]).subscribe(data => {
         this.userArticles[userName] = data.data;
       });
