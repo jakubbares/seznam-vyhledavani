@@ -1,0 +1,175 @@
+body, html {
+  background-color:#1A242E;
+  color: white;
+  font-family: 'Source Sans Pro', sans-serif;
+}
+
+router-outlet {
+  padding: 0;
+  margin: 0;
+}
+
+.root {
+  display: flex;
+  margin: 0;
+  width: 100%;
+  height: 100%; /* -70px because of padding on body and html */
+}
+
+textarea {
+  border: none;
+  background-color: #23313A;
+  color: #ddd;
+  font-size: 13px;
+  resize: none;
+  height: 60px;
+  width: 100%;
+  /*width: calc(100% - 70px);*/
+  display: inline-block;
+  vertical-align: middle;
+}
+
+
+p-autoComplete, p-dropdown {
+  font-size: 14px;
+}
+
+
+
+.solution_small {
+  font-size: 10px;
+  color: grey;
+}
+
+.argument {
+  font-size: 13px;
+}
+
+
+
+
+
+
+
+.fas {
+  margin-right: 8px;
+}
+
+.fa-check {
+  color: green;
+  border: 2px solid green;
+}
+
+.fa-times {
+  color: red;
+  border: 2px solid red;
+}
+
+.popover-wrapper .popover-content {
+  box-shadow: 0px 3px 15px 0px rgba(0,0,0,0.25);
+}
+
+ion-content {
+  padding: 0;
+}
+
+.popup-button {
+  width: 40px;
+}
+
+
+label {display:block;}
+
+
+
+button {
+  background-color: #18527E !important;
+  color: white;
+  border: none;
+  width: 65px;
+  padding: 1px 15px;
+  border-radius: 4px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 11px;
+
+}
+
+input, select {
+  line-height: 15px;
+  border: none;
+  background-color: #45535C;
+  color: #ddd;
+  font-family: 'Source Sans Pro', sans-serif;
+  font-size: 14px;
+}
+
+.numbers {
+  color: grey;
+  font-size: 11px;
+}
+
+.comments{
+  display: inline-block;
+}
+
+.comment {
+  font-size: 13px;
+}
+
+.argument {
+  font-size: 14px;
+}
+
+.comment-block {
+  background-color: #283142;
+  padding: 8px;
+  margin: 5px;
+}
+
+.argument-block {
+  background-color: #283142;
+  padding: 13px;
+  margin: 5px;
+}
+
+.tags {
+  margin-top: 25px;
+  margin-bottom: 25px;
+}
+
+.tag {
+  margin: 0px 1px;
+  padding: 12px 20px;
+  background-color: #bbb;
+  border: 2px solid #999;
+}
+
+.category {
+  background-color: #283142;
+  font-size: 12px;
+  font-weight: bold;
+  padding: 13px;
+  margin: 5px;
+  white-space: nowrap;
+  display: inline-block;
+  cursor: pointer;
+}
+
+.problem-heading {
+  font-size: 22px;
+  margin-bottom: 27px;
+}
+
+.add-button{
+  background-color: #384152;
+  font-size: 15px;
+  padding: 6px 10px;
+  margin: 5px;
+  white-space: nowrap;
+  display: inline-block;
+  cursor: pointer;
+  border-radius: 6px;
+  border: #384152 0px solid;
+}

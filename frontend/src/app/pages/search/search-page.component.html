@@ -1,0 +1,9 @@
+<div class="container">
+  <div class="row">
+    <div class="col-lg-12">
+      <p-dropdown [options]="users" [(ngModel)]="userName"></p-dropdown>
+      <p-autoComplete [(ngModel)]="query" [suggestions]="querySuggestions" (onSelect)="search(query)" (completeMethod)="completeQuery($event)" [multiple]="true" field="name"></p-autoComplete>
+    </div>
+  </div>
+
+</div>
