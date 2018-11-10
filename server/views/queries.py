@@ -9,14 +9,14 @@ from ufal.morphodita import *
 from string import punctuation
 import re
 
-data = pd.read_csv('articles_cleaned.csv',  sep='|')
-data.columns = ['category','query','id','url', 'headline', 'paragraphs']
+data = pd.read_csv('views/full_articles_cleaned.csv',  sep='|')
+data.columns = ['category','query','id','url', 'title', 'description', 'rssPublicationDate','headline', 'paragraphs']
 data['paragraphs'] = data['paragraphs'].fillna('')
 data =  data[data['paragraphs'] != '\xa0']
 lemma_column = data.shape[0]*[[]]
 data['lemmas'] = lemma_column
 tfidf = TfidfVectorizer(ngram_range=(1,1))
-tagger = Tagger.load('../../morphodita/czech-morfflex-pdt-161115.tagger')
+tagger = Tagger.load('./../morphodita/czech-morfflex-pdt-161115.tagger')
 forms = Forms()
 
 for index, row in data.iterrows():

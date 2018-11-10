@@ -1,7 +1,7 @@
 #!/usr/bin/env python
-from server.app import create_app
+from app import create_app
 
-from server.views.queries import Query
+from views.queries import Query
 
 app = create_app('config')
 from flask_cors import CORS

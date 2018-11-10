@@ -29,8 +29,8 @@ def clean_text():
         with open("full_articles_cleaned.csv", "w", encoding="utf-8") as df:
             for i, line in enumerate(uf):
                 parts = line.split('|')
-                if len(parts) > 8:
-                    outStr = '|'.join(parts[0:7]) + '|' + ' '.join(parts[8:len(parts)])
+                if len(parts) > 9:
+                    outStr = '|'.join(parts[0:8]) + '|' + ' '.join(parts[9:len(parts)])
                     
                     df.write(outStr)
                     print('stripped+saved')
