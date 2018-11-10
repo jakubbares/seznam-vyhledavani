@@ -1,0 +1,31 @@
+.Result--news {
+  color: black;
+  border: 1px solid black;
+  background-color: white;
+
+  .Result-title-link {
+    font-size: 2rem;
+    line-height: 2.4rem;
+  }
+
+  .Result-contentContainer {
+    font-size: 1.4rem;
+    line-height: 2rem;
+
+    .Result-url-link {
+      color: green!important;
+    }
+
+    .Result-sitelink {
+      color: #0645ad;
+      display: block;
+    }
+    .Result-description {
+      font-family: Arial CE,Arial,Helvetica CE,Helvetica,sans-serif;
+      font-weight: 400;
+      margin: 0;
+      color: #666;
+    }
+  }
+}
+

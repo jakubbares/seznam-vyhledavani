@@ -17,8 +17,8 @@ export class QueryService {
   historiesMap: any = {};
   constructor(private http: HttpClient) {
     this.historiesMap = {
-      "John": [],
-      "Mary": [],
+      "Politics": ["8b66a26adef1a628", "939b47f04e3f1246", "6e631de2f3f47090", "939b47f04e3f1246", "698aa051e5028eaf", "cf6c62fa32db4645"],
+      "Sport": [],
       "Joe": []
     };
   }
@@ -30,6 +30,11 @@ export class QueryService {
 
   getArticles(articles_ids: string[]): Observable<any> {
     return this.http.post(this.baseUrl + '/articles', {"history": articles_ids})
+      .catch(this.handleError);
+  }
+
+  getQuerySuggestions(): Observable<any> {
+    return this.http.get(this.baseUrl + '/suggestions')
       .catch(this.handleError);
   }
 

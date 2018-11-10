@@ -1,0 +1,20 @@
+.button-area {
+  border: 8px solid #3fd9ff;
+  width: 100%;
+  height: 60px;
+  padding: 20px;
+  background-color: #3fd9de;
+  color: black;
+  display: inline-block;
+  margin-bottom: 40px;
+}
+
+p-autoComplete {
+  width: 300px;
+  font-size: 25px;
+  line-height: 40px;
+}
+
+.autocomplete-div {
+  text-align: center;
+}

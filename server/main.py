@@ -8,10 +8,14 @@ from flask_cors import CORS
 CORS(app)
 
 
-# Events
 @app.route('/query', methods=['POST'])
 def getEventsForTeam():
     return Query.getResultsForQueryAndHistory()
+
+
+@app.route('/suggestions', methods=['GET'])
+def getAllSuggestions():
+    return Query.getQuerySuggestions()
 
 
 @app.route('/articles', methods=['POST'])

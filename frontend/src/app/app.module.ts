@@ -16,6 +16,7 @@ import {QueryService} from './services/query.service';
 import {SearchPage} from "./pages/search/search.page";
 import { ArticleComponent } from './components/article/article.component';
 import { HistoryPage } from './pages/history/history.page';
+import {NavigationComponent} from "./components/navigation/navigation.component";
 
 
 
@@ -36,6 +37,7 @@ import { HistoryPage } from './pages/history/history.page';
     AppComponent,
     SearchPage,
     ArticleComponent,
+    NavigationComponent,
     HistoryPage
   ],
   providers: [

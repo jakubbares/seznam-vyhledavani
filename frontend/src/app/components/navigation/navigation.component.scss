@@ -1,0 +1,40 @@
+@import '../../../variables.scss';
+
+
+.navigation, .navigation-item, .navigation-item--right, .navigation-link {
+  color: #EEEEEE !important;
+  border: 1px solid #283142;
+  border-radius: 0px;
+  padding-right: 10px;
+
+}
+
+.navigation {
+  background-color: #283142 !important;
+  color: #EEEEEE !important;
+}
+
+.navigation-logo {
+  display: inline;
+  margin: 0 0 0 1.25%;
+}
+
+.navigation-item {
+  display: inline-block;
+}
+
+.navigation-item--right {
+  display: inline-block;
+  float: right;
+}
+
+.navigation-ul {
+  margin: 0;
+}
+
+.navigation-li {
+  display: inline;
+}
+
+
+

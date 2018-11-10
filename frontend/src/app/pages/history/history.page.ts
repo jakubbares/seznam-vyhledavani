@@ -2,9 +2,9 @@ import { Component, OnInit } from '@angular/core';
 import {QueryService} from "../../services/query.service";
 
 @Component({
-  selector: 'ko-history',
-  templateUrl: './history.component.html',
-  styleUrls: ['./history.component.css']
+  selector: 'sz-history-page',
+  templateUrl: './history.page.html',
+  styleUrls: ['./history.page.css']
 })
 export class HistoryPage {
   userArticles = {};
@@ -15,7 +15,7 @@ export class HistoryPage {
     this.users = Object.keys(this.queryService.historiesMap);
     this.users.forEach(userName => {
       this.queryService.getArticles(this.queryService.historiesMap[userName]).subscribe(data => {
-        this.userArticles[userName] = data.data;
+        this.userArticles[userName] = data;
       });
     });
   }

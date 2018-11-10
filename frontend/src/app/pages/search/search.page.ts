@@ -3,12 +3,13 @@ import {QueryService} from "../../services/query.service";
 
 
 @Component({
-  selector: 'search-page',
-  templateUrl: './search-page.component.html'
+  selector: 'sz-search-page',
+  templateUrl: './search.page.html',
+  styleUrls: ['./search.page.css']
 })
 export class SearchPage {
-  queries: string[];
-  query: string;
+  queries: any[];
+  query: any;
   querySuggestions: string[];
   articles: any[];
   userName: string;
@@ -16,21 +17,28 @@ export class SearchPage {
   constructor(
     private queryService: QueryService
   ) {
-    this.queries = ['test', 'one', 'two'];
+    window['search'] = this;
+    this.queryService.getQuerySuggestions().subscribe(data => {
+      this.queries = data;
+    });
     this.users = Object.keys(this.queryService.historiesMap);
   }
 
 
   search(query) {
     const history = this.queryService.historiesMap[this.userName];
-    this.queryService.getResultsForQueryAndHistory(query, history).subscribe(data => {
-      this.articles = data.data;
+    this.queryService.getResultsForQueryAndHistory(query.query, history).subscribe(data => {
+      this.articles = data;
     })
   }
 
-  completeQuery(query) {
+  completeQuery(event) {
     this.querySuggestions = this.queries.filter(q => {
-      return q.indexOf(query) != -1
+      return q.query.indexOf(event.query.toLowerCase()) != -1
     })
+  }
+
+  selectUser(user) {
+    this.userName = user;
   }
 }
