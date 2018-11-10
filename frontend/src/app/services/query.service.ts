@@ -14,11 +14,22 @@ import {environment} from '../../environments/environment';
 @Injectable()
 export class QueryService {
   private baseUrl = `${environment.apiUrl}`;
+  historiesMap: any = {};
   constructor(private http: HttpClient) {
+    this.historiesMap = {
+      "John": [],
+      "Mary": [],
+      "Joe": []
+    };
   }
 
-  getResultsForQueryAndHistory(query: string, history: string[]): Observable<any> {
-    return this.http.post(this.baseUrl + '/query', {"query": query, "history": history})
+  getResultsForQueryAndHistory(query: string, articles_ids: string[]): Observable<any> {
+    return this.http.post(this.baseUrl + '/query', {"query": query, "history": articles_ids})
+      .catch(this.handleError);
+  }
+
+  getArticles(articles_ids: string[]): Observable<any> {
+    return this.http.post(this.baseUrl + '/articles', {"history": articles_ids})
       .catch(this.handleError);
   }
 

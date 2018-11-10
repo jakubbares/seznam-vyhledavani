@@ -14,6 +14,11 @@ def getEventsForTeam():
     return Query.getResultsForQueryAndHistory()
 
 
+@app.route('/articles', methods=['POST'])
+def getArticles():
+    return Query.getArticles()
+
+
 if __name__ == '__main__':
     app.run(host=app.config['HOST'],
             port=app.config['PORT'],

@@ -43,6 +43,16 @@ indices = pd.Series(data.index, index=data['url'])
 
 class Query(Resource):
     @staticmethod
+    def getArticles():
+        raw_dict = request.get_json(force=True)
+        try:
+            history = raw_dict['history']
+            return json.dumps(data[data['id'] in history])
+        except:
+            return "Invalid"
+
+
+    @staticmethod
     def getResultsForQueryAndHistory():
         raw_dict = request.get_json(force=True)
         try:
@@ -62,6 +72,6 @@ class Query(Resource):
             average_scores.columns = ['index', 'score']
             average_scores = average_scores.sort_values(ascending=False)
             article_indices = average_scores.nlargest(10).keys()
-            return data.iloc[article_indices]
+            return json.dumps(data.iloc[article_indices])
         except:
             return "Invalid"

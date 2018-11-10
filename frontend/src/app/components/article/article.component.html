@@ -1,0 +1,26 @@
+<div class="Result--news">
+  <h3 class="Result-title">
+    <a tabindex="0" class="Result-title-link" data-dot="title"
+       [href]=article.url>
+      <span>{{article.title}}</span>
+    </a>
+  </h3>
+  <div class="Result-contentContainer">
+    <div>
+      <a [href]=article.url></a>
+      <div class="Result-url">
+        <a tabindex="0" class="Result-url-link" data-dot="url"
+           [href]=article.url>
+          <span>irozhlas.cz</span>
+        </a>
+        <div class="Result-attrs Result-attrs--news">
+          <span class="Result-attr">Před 3 dny</span>
+        </div>
+      </div>
+      <span class="Ellipsis Result-description Result-description--niceResult" data-dot="description">
+          {{article.description}}
+        </span>
+    </div>
+    <a>Další výsledky z irozhlas.cz</a>
+  </div>
+</div>
