@@ -2,7 +2,7 @@
   <h3 class="Result-title">
     <a tabindex="0" class="Result-title-link" data-dot="title"
        [href]=article.url>
-      <span>{{article.title}}</span>
+      <span #title>{{article.title}}</span>
     </a>
   </h3>
   <div class="Result-contentContainer">
@@ -17,7 +17,7 @@
           <span class="Result-attr">Před 3 dny</span>
         </div>
       </div>
-      <span class="Ellipsis Result-description Result-description--niceResult" data-dot="description">
+      <span #description class="Ellipsis Result-description Result-description--niceResult" data-dot="description">
           {{article.description}}
         </span>
     </div>
