@@ -11,9 +11,6 @@ def create_app(config_filename):
     app.config.from_object(config_filename)
     app.response_class = MyResponse
 
-    from app.data.models import db
-    db.init_app(app)
-
     # Blueprints   
     # from app.data.views import users
     # app.register_blueprint(users, url_prefix='/api/v1/data')
