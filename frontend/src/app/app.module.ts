@@ -8,28 +8,23 @@ import {DropdownModule} from 'primeng/dropdown';
 import {ButtonModule} from 'primeng/button';
 import {AutoCompleteModule} from 'primeng/primeng';
 import {HttpClientModule} from '@angular/common/http';
-import { ModalModule } from 'ngx-bootstrap/modal'
-import {PopoverModule} from './components/ng2-popover/popover.module';
 
-import { HttpModule } from '@angular/http';
 import { AppComponent } from './app.component';
 import {routes} from './app.routes';
 
-
-
 import {QueryService} from './services/query.service';
-import {SearchPage} from "./pages/search/search-page.component";
+import {SearchPage} from "./pages/search/search.page";
+import { ArticleComponent } from './components/article/article.component';
+import { HistoryPage } from './pages/history/history.page';
 
 
 
 @NgModule({
   imports: [
     HttpClientModule,
-    PopoverModule,
     BrowserModule,
     BrowserAnimationsModule,
     FormsModule,
-    HttpModule,
     MultiSelectModule,
     DropdownModule,
     TableModule,
@@ -38,11 +33,12 @@ import {SearchPage} from "./pages/search/search-page.component";
     routes
   ],
   declarations: [
-
     AppComponent,
-    SearchPage
+    SearchPage,
+    ArticleComponent,
+    HistoryPage
   ],
-  providers: [,
+  providers: [
     QueryService,
   ],
   bootstrap: [
