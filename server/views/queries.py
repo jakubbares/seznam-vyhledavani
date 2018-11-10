@@ -39,7 +39,7 @@ class Query(Resource):
         query = raw_dict['query']
         history = raw_dict['history']
 
-        query_data = data.loc[data['query'] == 'parlament']
+        query_data = data.loc[data['query'] == query]
         query_tfidf_matrix = tfidf.fit_transform(query_data['lemmas'])
         additional_rows = pd.DataFrame(0, index=np.arange(data.shape[0]-query_data.shape[0]), columns=[i for i in range(tfidf_matrix.todense().shape[1])])
 
