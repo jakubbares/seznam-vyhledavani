@@ -1,1 +1,1 @@
-# seznam-vyhledavani
+# Seznam Hackathon
